@@ -4,10 +4,13 @@ import PointsController from './controllers/PointsController';
 import ItemsController from './controllers/itemsController';
 
 const routes = express.Router();
-const pointController = new PointsController();
+const pointsController = new PointsController(); 
 const itemsController = new ItemsController();
 
 routes.get('/items', itemsController.index);
-routes.post('/points', pointController.creat );
+routes.post('/points', pointsController.creat );
+//listar um unico ponto
+routes.get('/points', pointsController.index);
+routes.get('/points/:id', pointsController.show);
 
 export default routes;
